@@ -68,25 +68,43 @@ print(P(ev,Espaco))
 def clicou3ou4(a):
     print(a)
     return a[0]==(1) and a[-1]==(3)
-print(P(clicou3ou4,A))'''
+print(P(clicou3ou4,A))
 
+def ver(lista):
+    for i in lista:'''
+        
 
 a=cross('C','1')|cross('D','12')|cross('P','1')|cross('A','1')|cross('Y','12345')|cross('X','12345')|cross('Z','12345')|cross('M','1')
 # C = Carrinho, D = Dropdown, P = Perfil, A = Altera senha, Y, X e Z = Produtos,  M = Mais produtos
 # Números = possibilidades de acesso
 com=[]
-for i in range(5):
-    f=combos(d,i+1)
+cont=0
+for i in range(1):
+    f=combos(a,5)
     aux=combos(a,i+1)
     for j in f:
         h=j.split(' ')
         if '1' in h[0]:
-            if 'X' in h[0]:
-                    print(j)
+            if 'A' in h[0] or 'P' in h[0]:
+                pass
+            else:
+                if 'M' in h[0] and len(h) > 1:
+                    pass
+                else:
+                    if len(h) < 2:
+                        if 'D' in h[0]:
+                            cont+=1
+                            print(j)
+                    elif len(h) > 1:
+                        if '1' in  h[1] or '2' in h[1]:
+                            if 'D' in h[0]:
+                                cont+=1
+                                print(j)
+                
 
 
             '''if 'P' == j[0] or 'A' == j[0]:
-                k='1'
+                k='11'
             else:
                 
                 if len(j) < 3:
@@ -132,6 +150,6 @@ for i in range(5):
             if 'P' in c[-1] or 'A' in c[-1] or 'C' in c[-1] or 'M' in c[-1]:
                 com.append(j)'''
 
-
+print(cont)
        
 
